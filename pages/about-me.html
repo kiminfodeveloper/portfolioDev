@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Kevyn Melo | About Me</title>
+        <link rel="stylesheet" href="../css/styles.css" />
+        <link rel="stylesheet" href="../css/language.css" />
+        <link rel="stylesheet" href="../css/about-me.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        />
+        <link
+            rel="shortcut icon"
+            href="../images/logo.png"
+            type="image/x-icon"
+        />
+    </head>
+    <body>
+        <header>
+            <nav class="nav">
+                <span class="nav-name">kevyn-melo</span>
+                <ul class="nav-items">
+                    <li><a href="../index.html">_hello</a></li>
+                    <li><a href="#" class="active">_about-me</a></li>
+                    <li><a href="#">_projects</a></li>
+                </ul>
+                <span class="nav-contact">
+                    <a href="https://www.linkedin.com/in/kevyn-melo-6b99b4176/"
+                        >_contact-me</a
+                    >
+                </span>
+            </nav>
+        </header>
+
+        <div class="language-switch">
+            <p class="text-language">_selecione a linguagem do site</p>
+            <button onclick="setLanguage('pt')">
+                <img class="icon-flag" src="../images/brazil.png" alt="pt" />
+            </button>
+            <button onclick="setLanguage('en')">
+                <img class="icon-flag" src="../images/usa.png" alt="en" />
+            </button>
+        </div>
+
+        <main class="about-container">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <ul class="menu">
+                    <li data-section="bio" class="active">
+                        <span class="label-bio">📄 Bio</span>
+                    </li>
+                    <li data-section="interests">
+                        <span class="label-interests">💡 Interesses</span>
+                    </li>
+                    <li data-section="education">
+                        <span class="label-education">🎓 Formações</span>
+                    </li>
+                    <li data-section="high-school">
+                        <span class="label-high-school">🏫 Escolaridade</span>
+                    </li>
+                    <li data-section="university">
+                        <span class="label-university">🏛️ Universidade</span>
+                    </li>
+                </ul>
+
+                <div class="contacts">
+                    <p>kiminfote@gmail.com</p>
+                    <p>+55 12 98152-3401</p>
+                </div>
+            </aside>
+
+            <!-- Content Section -->
+            <section class="content" id="content-display">
+                <h2>📄 Bio</h2>
+                <p>
+                    Olá! Eu sou Kevyn Melo, desenvolvedor web com paixão por
+                    interfaces modernas e jogos retrô.
+                </p>
+            </section>
+
+            <!-- Code Snippet Showcase -->
+            <section class="code-snippets">
+                <h3>// Code snippet showcase:</h3>
+
+                <div class="snippet">
+                    <p class="snippet-user">@kevyn</p>
+                    <code>
+                        // Converte uma string para capital case<br />
+                        function toCapitalCase(str) {<br />
+                        &nbsp;&nbsp;return str<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;.toLowerCase()<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;.split(" ")<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;.map(word =>
+                        word.charAt(0).toUpperCase() + word.slice(1))<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;.join(" ");<br />
+                        }
+                    </code>
+                </div>
+
+                <div class="snippet">
+                    <p class="snippet-user">@kevyn</p>
+                    <code>
+                        // Verifica se o número é primo<br />
+                        function isPrime(n) {<br />
+                        &nbsp;&nbsp;if (n &lt;= 1) return false;<br />
+                        &nbsp;&nbsp;if (n &lt;= 3) return true;<br />
+                        &nbsp;&nbsp;if (n % 2 === 0 || n % 3 === 0) return
+                        false;<br />
+                        &nbsp;&nbsp;for (let i = 5; i * i &lt;= n; i += 6) {<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;if (n % i === 0 || n % (i + 2)
+                        === 0) return false;<br />
+                        &nbsp;&nbsp;}<br />
+                        &nbsp;&nbsp;return true;<br />
+                        }
+                    </code>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Encontre-me no:</p>
+            <div class="social">
+                <a href="https://github.com/kiminfodeveloper" target="_blank"
+                    ><i class="bi bi-github"></i
+                ></a>
+                <a
+                    href="https://www.linkedin.com/in/kevyn-melo-6b99b4176/"
+                    target="_blank"
+                    ><i class="bi bi-linkedin"></i
+                ></a>
+            </div>
+        </footer>
+
+        <script defer src="../js/helpers.js"></script>
+        <script defer src="../js/about-me.js"></script>
+        <script defer src="../js/language.js"></script>
+    </body>
+</html>

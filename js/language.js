@@ -1,76 +1,99 @@
-const translations = {
-    pt: {
-        hello: "Olá, eu sou",
-        developer: "Desenvolvedor Front-end",
-        snippetLine1: "// Ao lado temos um jogo feito em JS.",
-        snippetLine2: "// encontre o meu perfil no github:",
-        startButton: "começar-jogo",
-        instructions1: "// use o teclado",
-        instructions2: "// setas para jogar",
-        foodLeft: "// Comidas restantes",
-        skipButton: "pular",
-        footerText: "Encontre-me no:",
-        selectLanguage: "_selecione a linguagem do site",
-        winMessage: "🎉 Parabéns! Você comeu todas as comidas! 🎉",
-        restartButton: "Jogar Novamente",
-    },
-    en: {
-        hello: "Hello, I am",
-        developer: "Front-end Developer",
-        snippetLine1: "// On the side we have a game made in JS.",
-        snippetLine2: "// find my profile on github:",
-        startButton: "start-game",
-        instructions1: "// use the keyboard",
-        instructions2: "// arrows to play",
-        foodLeft: "// food left",
-        skipButton: "skip",
-        footerText: "Find me on:",
-        selectLanguage: "_select the site language",
-        winMessage: "🎉 Congratulations! You ate all the food! 🎉",
-        restartButton: "Play Again",
-    },
-};
+// language.js
+document.addEventListener("DOMContentLoaded", () => {
+    const lang = localStorage.getItem("selectedLanguage") || "pt";
+    applyLanguage(lang);
+});
 
 function setLanguage(lang) {
-    localStorage.setItem("selectedLanguage", lang); // salva
-    applyLanguage(lang); // aplica
+    localStorage.setItem("selectedLanguage", lang);
+    applyLanguage(lang);
 }
 
 function applyLanguage(lang) {
-    document.querySelector(".intro p").textContent = translations[lang].hello;
-    document.querySelector(".intro h2").innerHTML =
-        "<span>&gt;</span> " + translations[lang].developer;
+    const path = window.location.pathname;
 
-    const snippet = document.querySelectorAll(".code-snippet p");
-    snippet[0].textContent = translations[lang].snippetLine1;
-    snippet[1].textContent = translations[lang].snippetLine2;
+    // INDEX
+    if (path.includes("index.html")) {
+        const t = translations[lang].index;
 
-    document.querySelector(".start-button").textContent =
-        translations[lang].startButton;
+        const introP = document.querySelector(".intro p");
+        if (introP) introP.textContent = t.hello;
 
-    const instructions = document.querySelectorAll(".game-instructions p");
-    instructions[0].textContent = translations[lang].instructions1;
-    instructions[1].textContent = translations[lang].instructions2;
-    instructions[2].textContent = translations[lang].foodLeft;
+        const introH2 = document.querySelector(".intro h2");
+        if (introH2) introH2.innerHTML = "<span>&gt;</span> " + t.developer;
 
-    document.querySelector(".skip-button").textContent =
-        translations[lang].skipButton;
-    document.querySelector("footer p").textContent =
-        translations[lang].footerText;
+        const snippet = document.querySelectorAll(".code-snippet p");
+        if (snippet.length >= 2) {
+            snippet[0].textContent = t.snippetLine1;
+            snippet[1].textContent = t.snippetLine2;
+        }
 
-    document.querySelector(".text-language").textContent =
-        translations[lang].selectLanguage;
+        const startBtn = document.querySelector(".start-button");
+        if (startBtn) startBtn.textContent = t.startButton;
 
-    // ✅ Tradução da mensagem de vitória e botão
-    const winMessageEl = document.querySelector(".win-message p");
-    const restartButtonEl = document.querySelector(".restart-button");
+        const instructions = document.querySelectorAll(".game-instructions p");
+        if (instructions.length >= 3) {
+            instructions[0].textContent = t.instructions1;
+            instructions[1].textContent = t.instructions2;
+            instructions[2].textContent = t.foodLeft;
+        }
 
-    if (winMessageEl) winMessageEl.textContent = translations[lang].winMessage;
-    if (restartButtonEl)
-        restartButtonEl.textContent = translations[lang].restartButton;
+        const skipBtn = document.querySelector(".skip-button");
+        if (skipBtn) skipBtn.textContent = t.skipButton;
+
+        const footerP = document.querySelector("footer p");
+        if (footerP) footerP.textContent = t.footerText;
+
+        const langLabel = document.querySelector(".text-language");
+        if (langLabel) langLabel.textContent = t.selectLanguage;
+
+        const winMsg = document.querySelector(".win-message p");
+        if (winMsg) winMsg.textContent = t.winMessage;
+
+        const restartBtn = document.querySelector(".restart-button");
+        if (restartBtn) restartBtn.textContent = t.restartButton;
+    }
+
+    // ABOUT ME
+    if (path.includes("about-me.html")) {
+        const t = translations[lang].aboutMe;
+
+        const contentDisplay = document.getElementById("content-display");
+        if (contentDisplay) {
+            const section =
+                contentDisplay.getAttribute("data-section") || "bio";
+            updateAboutSection(section, lang);
+        }
+
+        const snippetTitle = document.querySelector(".code-snippets h3");
+        if (snippetTitle) snippetTitle.textContent = t.snippetShowcase;
+
+        const langLabel = document.querySelector(".text-language");
+        if (langLabel)
+            langLabel.textContent = translations[lang].index.selectLanguage;
+
+        const footerP = document.querySelector("footer p");
+        if (footerP) footerP.textContent = translations[lang].index.footerText;
+
+        // ✅ Atualiza os textos das abas do menu lateral
+        const menuItems = document.querySelectorAll(".menu li");
+        const sectionKeys = [
+            "bio",
+            "interests",
+            "education",
+            "highSchool",
+            "university",
+        ];
+
+        menuItems.forEach((item, index) => {
+            const section = sectionKeys[index];
+            const titleKey = section + "Title";
+            item.textContent = t[titleKey];
+        });
+    }
+
+    // Atualiza dinamicamente a seção ativa do about-me
+    if (typeof updateActiveAboutSection === "function") {
+        updateActiveAboutSection();
+    }
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-    const savedLang = localStorage.getItem("selectedLanguage") || "pt";
-    applyLanguage(savedLang);
-});
