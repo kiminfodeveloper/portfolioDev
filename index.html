@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Kevyn Melo | Portfolio</title>
+        <link rel="stylesheet" href="./css/styles.css" />
+        <link rel="stylesheet" href="./css/language.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        />
+    </head>
+    <body>
+        <header>
+            <nav class="nav">
+                <span class="nav-name">kevyn-melo</span>
+                <ul class="nav-items">
+                    <li><a href="index.html" class="active">_hello</a></li>
+                    <li><a href="#">_about-me</a></li>
+                    <li><a href="#">_projects</a></li>
+                </ul>
+                <span class="nav-contact"
+                    ><a href="https://www.linkedin.com/in/kevyn-melo-6b99b4176/"
+                        >_contact-me</a
+                    ></span
+                >
+            </nav>
+        </header>
+        <div class="language-switch">
+            <p class="text-language">_selecione a linguagem do site</p>
+            <button onclick="setLanguage('pt')">
+                <img class="icon-flag" src="./images/brazil.png" alt="pt" />
+            </button>
+            <button onclick="setLanguage('en')">
+                <img class="icon-flag" src="./images/usa.png" alt="en" />
+            </button>
+        </div>
+        <main>
+            <section class="intro">
+                <p>Olá, eu sou</p>
+                <h1>Kevyn Melo</h1>
+                <h2><span>&gt;</span> Desenvolvedor Front-end</h2>
+
+                <div class="code-snippet">
+                    <p>// Ao lado temos um jogo feito em JS.</p>
+                    <p>// encontre o meu perfil no github:</p>
+                    <p>
+                        const githubLink =
+                        <a
+                            href="https://github.com/kiminfodeveloper"
+                            target="_blank"
+                        >
+                            "https://github.com/kiminfodeveloper </a
+                        >;
+                    </p>
+                </div>
+            </section>
+
+            <section class="game-box">
+                <div class="game-screen">
+                    <canvas id="snakeCanvas" width="200" height="300"></canvas>
+                    <button class="start-button">começar-jogo</button>
+                </div>
+                <div class="win-message" style="display: none">
+                    <p>🎉 Parabéns! Você comeu todas as comidas! 🎉</p>
+                    <button class="restart-button">Jogar Novamente</button>
+                </div>
+
+                <div class="game-instructions">
+                    <p>// use o teclado</p>
+                    <p>// setas para jogar</p>
+                    <div class="arrows">
+                        <div class="arrow up">↑</div>
+                        <div class="arrow left">←</div>
+                        <div class="arrow down">↓</div>
+                        <div class="arrow right">→</div>
+                    </div>
+                    <p>// Comidas restantes</p>
+                    <div class="food-dots">
+                        <span></span><span></span><span></span><span></span
+                        ><span></span> <span></span><span></span>
+                    </div>
+                    <button class="skip-button">pular</button>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>Encontre-me no:</p>
+            <div class="social">
+                <a href="https://github.com/kiminfodeveloper" target="_blank"
+                    ><i class="bi bi-github"></i
+                ></a>
+                <a
+                    href="https://www.linkedin.com/in/kevyn-melo-6b99b4176/"
+                    target="_blank"
+                    ><i class="bi bi-linkedin"></i
+                ></a>
+            </div>
+        </footer>
+        <script defer src="./js/snake.js"></script>
+        <script defer src="./js/language.js"></script>
+    </body>
+</html>

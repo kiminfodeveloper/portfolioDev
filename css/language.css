@@ -1,0 +1,27 @@
+.language-switch {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin: 10px 20px 0 0;
+}
+
+.language-switch button {
+    background: transparent;
+    border: 1px solid #444;
+    color: #ccc;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.language-switch button:hover {
+    background-color: #1e2633;
+    color: #fff;
+}
+
+.icon-flag {
+    width: 25px;
+    height: 15px;
+}
