@@ -92,6 +92,41 @@ function applyLanguage(lang) {
         });
     }
 
+    // PROJECTS
+    if (path.includes("projects.html")) {
+        const t = translations[lang].projects;
+
+        const sectionTitle = document.querySelector(".section-title");
+        if (sectionTitle) sectionTitle.textContent = t.sectionTitle;
+
+        const projectCards = document.querySelectorAll(".project-card");
+
+        if (projectCards.length) {
+            projectCards.forEach((card, index) => {
+                const title = card.querySelector("h3");
+                const subtitle = card.querySelector(".project-subtitle");
+                const button = card.querySelector(".btn-view");
+
+                if (t.projectsList[index]) {
+                    const project = t.projectsList[index];
+                    if (title) title.childNodes[0].textContent = project.title;
+                    if (subtitle) subtitle.textContent = project.subtitle;
+                    if (button) button.textContent = t.viewProject;
+                }
+            });
+        }
+
+        const langLabel = document.querySelector(".text-language");
+        if (langLabel)
+            langLabel.textContent = translations[lang].index.selectLanguage;
+
+        const footerP = document.querySelector("footer p");
+        if (footerP) footerP.textContent = translations[lang].index.footerText;
+    }
+    if (window.updateProjectsSection) {
+        window.updateProjectsSection(lang);
+    }
+
     // Atualiza dinamicamente a seção ativa do about-me
     if (typeof updateActiveAboutSection === "function") {
         updateActiveAboutSection();

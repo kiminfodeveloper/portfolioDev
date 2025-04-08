@@ -1,4 +1,3 @@
-// helpers.js
 const translations = {
     pt: {
         index: {
@@ -34,6 +33,37 @@ const translations = {
                 "Cursei 2 cursos referente a tecnologia da informação, ambos na UNICID.",
             snippetShowcase: "// Exibição de trechos de código:",
         },
+        projects: {
+            sectionTitle: "// Meus Projetos",
+            projectsList: [
+                {
+                    title: "Projeto 1 //",
+                    subtitle: "Apresentação de Empresa",
+                    tech: "HTML, CSS e JavaScript",
+                },
+                {
+                    title: "Projeto 2 //",
+                    subtitle: "Portfolio React",
+                    tech: "Vite, ReacJS, Styled-Components, Vercel.",
+                },
+                {
+                    title: "Projeto 3 //",
+                    subtitle: "Landing Page de Mercado",
+                    tech: "HTML, CSS, JavaScript, BootStrap 5.",
+                },
+                {
+                    title: "Projeto 4 //",
+                    subtitle: "Loja de Carros",
+                    tech: "ReactJS, CSS Modules, JS.",
+                },
+                {
+                    title: "Projeto 5 //",
+                    subtitle: "Loja de Carros",
+                    tech: "ReactJS, CSS Modules, JS.",
+                },
+            ],
+            viewProject: "ver-projeto",
+        },
     },
     en: {
         index: {
@@ -67,6 +97,37 @@ const translations = {
             universityTitle: "🏛️ University",
             universityText: "I studied two IT-related degrees, both at UNICID.",
             snippetShowcase: "// Code snippet showcase:",
+        },
+        projects: {
+            sectionTitle: "// My Projects",
+            projectsList: [
+                {
+                    title: "Project 1 //",
+                    subtitle: "Company Presentation",
+                    tech: "HTML, CSS and JavaScript",
+                },
+                {
+                    title: "Project 2 //",
+                    subtitle: "React Portfolio",
+                    tech: "Vite, ReacJS, Styled-Components, Vercel.",
+                },
+                {
+                    title: "Project 3 //",
+                    subtitle: "Market Landing Page",
+                    tech: "HTML, CSS, JavaScript, BootStrap 5.",
+                },
+                {
+                    title: "Project 4 //",
+                    subtitle: "Car Shop",
+                    tech: "ReactJS, CSS Modules, JS.",
+                },
+                {
+                    title: "Project 5 //",
+                    subtitle: "Car Shop",
+                    tech: "ReactJS, CSS Modules, JS.",
+                },
+            ],
+            viewProject: "view-project",
         },
     },
 };
