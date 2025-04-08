@@ -31,7 +31,7 @@ O projeto usa um sistema de tradução simples em JavaScript que detecta o idiom
 
 Clone o repositório:
 
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/kiminfodeveloper/portfolioDev
 Abra o arquivo index.html no seu navegador.
 
 Nenhum servidor local é necessário, já que o projeto é totalmente estático.
