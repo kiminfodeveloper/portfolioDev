@@ -6,7 +6,7 @@ Bem-vindo ao repositório do meu **Portfólio Pessoal**, um projeto moderno e mu
 
 ![Portfolio Preview](./images/portfoliopreview.png)
 
-## Acesse ➡️ https://kiminfodeveloper.github.io/portfolioDev/
+## Acesse ➡️ https://kiminfodeveloper.github.io/portfolioDev/index.html
 
 ## ✨ Funcionalidades
 
