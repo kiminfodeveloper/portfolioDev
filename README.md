@@ -4,7 +4,9 @@ Bem-vindo ao repositório do meu **Portfólio Pessoal**, um projeto moderno e mu
 
 ## 📸 Preview
 
-![Portfolio Preview](./assets/preview.png)
+![Portfolio Preview](./images/portfoliopreview.png)
+
+## Acesse ➡️ https://kiminfodeveloper.github.io/portfolioDev/
 
 ## ✨ Funcionalidades
 
@@ -22,29 +24,12 @@ Bem-vindo ao repositório do meu **Portfólio Pessoal**, um projeto moderno e mu
 ## 🌐 Tradução
 
 O projeto usa um sistema de tradução simples em JavaScript que detecta o idioma salvo no localStorage e aplica dinamicamente os textos:
-// helpers.js
-const translations = {
-pt: {
-index: { ... },
-about: { ... },
-projects: { ... }
-},
-en: {
-index: { ... },
-about: { ... },
-projects: { ... }
-}
-};
+![Estrutura-de-Helpers](./images/helpers.png)
 
 ## 🚀 Como Executar Localmente
 
 Clone o repositório:
 
-git clone https://github.com/seu-usuario/seu-repositorio.git
-
-bash
-Copiar
-Editar
 git clone https://github.com/seu-usuario/seu-repositorio.git
 Abra o arquivo index.html no seu navegador.
 
