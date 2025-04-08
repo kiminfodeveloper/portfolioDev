@@ -23,7 +23,8 @@ Bem-vindo ao repositório do meu **Portfólio Pessoal**, um projeto moderno e mu
 
 ## 🌐 Tradução
 
-O projeto usa um sistema de tradução simples em JavaScript que detecta o idioma salvo no localStorage e aplica dinamicamente os textos:
+# O projeto usa um sistema de tradução simples em JavaScript que detecta o idioma salvo no localStorage e aplica dinamicamente os textos:
+
 ![Estrutura-de-Helpers](./images/helpers.png)
 
 ## 🚀 Como Executar Localmente
